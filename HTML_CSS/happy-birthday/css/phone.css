@@ -1,0 +1,29 @@
+body {
+    background-color: white;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero img {
+  border-radius: 0; /* top-left top-right bottom-right bottom-left */
+}
+
+aside.right, aside.left {
+  text-align: center;
+  float: inherit;
+}
+
+.contact {
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+}
+
+iframe {
+  border-radius: 0; /* top-left top-right bottom-right bottom-left */
+}
