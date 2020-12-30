@@ -1,0 +1,48 @@
+body {
+	width: 80%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.container-padding50 {
+	padding-top: 50px;
+}
+
+.container-textinput {
+	width: 60%;
+	height: 30px;
+	/* display: inline-block; */
+	float: left;
+	padding: 20px;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+
+.container-textinput:hover {
+	background: rgb(226, 226, 226);
+}
+
+.container-button {
+	border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 74px;
+    height: 74px;
+    background: rgb(16, 16, 220);
+    color: white;
+    transition-duration: 1s ;
+    font-size: 30px;
+}
+
+.container-button:hover {
+	background: rgb(103, 101, 255);
+	color: rgb(214, 214, 214);
+	font-size: 35px;
+    transform: rotate(360deg);
+}
+
+.container-image {
+	width: 30%;
+	/* display: block; */
+	/* float: left; */
+	margin-right:3%;
+}
