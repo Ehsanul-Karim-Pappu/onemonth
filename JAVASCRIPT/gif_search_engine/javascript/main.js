@@ -7,18 +7,18 @@ var username = ""
 username = prompt("What's your name?");
 
 while (username == "" || username == null) {
-	username = prompt("age nam de Bokachoda");
+	username = prompt("Please enter your name first");
 }
 
 
 /*******  Greetings  *******/
 var greetings = document.querySelector('.greetings');
 greetings.innerHTML = "";
-greetings.innerHTML = "<h1>Kire " + username + " khankir pola!!!!<h1/>";
+greetings.innerHTML = "<h1>Hello " + username + " !!!!. Welcome to my GIF search engine.<h1/>";
 
 
 /******* Dynamic Placeholder  *******/
-document.querySelector('.js-userinput').setAttribute("placeholder", "Ei " + username + " madarchod, Search de!!!");
+document.querySelector('.js-userinput').setAttribute("placeholder", "Hey, " + username + " enter your query here");
 
 
 /*******  Button Click Event  *******/
