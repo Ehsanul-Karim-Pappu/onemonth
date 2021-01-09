@@ -19,7 +19,7 @@ SoundCloudAPI.getTrack = function (query) {
         tracks.forEach(track => {
 
             var title = track.title;
-            var trackPNG = track.artwork_url;
+            var trackPNG = track.artwork_url || 'https://loremflickr.com/320/240';
             var trackURL = track.permalink_url;
 
             SoundCloudAPI.renderTracks(title, trackPNG, trackURL);
@@ -60,6 +60,10 @@ SoundCloudAPI.renderTracks = function (title, trackPNG, trackURL) {
     buttonDiv.innerHTML = '<i class="add icon"></i>';
     buttonDiv.innerHTML += '<span>Add to playlist</span>';
 
+    buttonDiv.addEventListener('click', function () {
+        SoundCloudAPI.getEmbed(trackURL);
+    });
+
 
 
     // contentDiv.appendChild(header);
@@ -74,6 +78,19 @@ SoundCloudAPI.renderTracks = function (title, trackPNG, trackURL) {
     // searchResult.appendChild(card);
 }
 
+// Add to playlist feature
+SoundCloudAPI.getEmbed = function (trackURL) {
+    var track_url = trackURL;
+    SC.oEmbed(track_url, { auto_play: true }).then(function (oEmbed) {
+        console.log(oEmbed.html);
+    });
+}
+
+
+
+
+
+
 
 
 SoundCloudAPI.init();
@@ -81,6 +98,7 @@ SoundCloudAPI.init();
 /*******  Button Click Event  *******/
 document.querySelector(".js-submit").addEventListener('click', function () {
     var userInput = getUserInput();
+    document.querySelector('.js-search-results').innerHTML = "";
     SoundCloudAPI.getTrack(userInput);
 });
 
@@ -88,6 +106,7 @@ document.querySelector(".js-submit").addEventListener('click', function () {
 document.querySelector('.js-search').addEventListener('keyup', function (e) {
     if (e.which === 13) {
         var userInput = getUserInput();
+        document.querySelector('.js-search-results').innerHTML = "";
         SoundCloudAPI.getTrack(userInput);
     }
 });
