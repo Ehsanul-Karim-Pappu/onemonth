@@ -15,7 +15,7 @@ SoundCloudAPI.getTrack = function (query) {
     SC.get('/tracks', {
         q: query
     }).then(function (tracks) {
-        console.log(tracks);
+        // console.log(tracks);
         tracks.forEach(track => {
 
             var title = track.title;
@@ -80,16 +80,15 @@ SoundCloudAPI.renderTracks = function (title, trackPNG, trackURL) {
 
 // Add to playlist feature
 SoundCloudAPI.getEmbed = function (trackURL) {
-    var track_url = trackURL;
-    SC.oEmbed(track_url, { auto_play: true }).then(function (oEmbed) {
-        console.log(oEmbed.html);
+    SC.oEmbed(trackURL, { auto_play: true }).then(function (oEmbed) {
+        // console.log(oEmbed.html);
+        var sideBar = document.querySelector('.js-playlist');
+
+        var box = document.createElement('div');
+        box.innerHTML = oEmbed.html;
+        sideBar.insertBefore(box, sideBar.firstChild);
     });
 }
-
-
-
-
-
 
 
 
