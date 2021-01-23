@@ -13,16 +13,33 @@ html, body {
 	left: 0;
 }
 
+#soundcloud-player .col-left-top {
+	width: 20%;
+	height: 60px;
+	background: #292929;
+	/* overflow: auto; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	/* padding-top: 60px; */
+	min-width: 200px;
+	z-index: 1;
+}
+
 #soundcloud-player .col-left {
 	width: 20%;
 	height: 100%;
-	background-color: #292929;
+	background: #292929;
 	overflow: auto;
 
 	position: fixed;
 	left: 0;
 	top: 0;
-
+	margin-top: 60px;
 	min-width: 200px;
 	z-index: 1;
 }

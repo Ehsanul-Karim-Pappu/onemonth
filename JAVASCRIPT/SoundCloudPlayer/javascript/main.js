@@ -80,13 +80,14 @@ SoundCloudAPI.renderTracks = function (title, trackPNG, trackURL) {
 
 // Add to playlist feature
 SoundCloudAPI.getEmbed = function (trackURL) {
-    SC.oEmbed(trackURL, { auto_play: true }).then(function (oEmbed) {
+    SC.oEmbed(trackURL, { auto_play: true, maxheight: 200 }).then(function (oEmbed) {
         // console.log(oEmbed.html);
         var sideBar = document.querySelector('.js-playlist');
 
         var box = document.createElement('div');
         box.innerHTML = oEmbed.html;
         sideBar.insertBefore(box, sideBar.firstChild);
+        localStorage.setItem("key", sideBar.innerHTML);
     });
 }
 
@@ -110,9 +111,16 @@ document.querySelector('.js-search').addEventListener('keyup', function (e) {
     }
 });
 
+document.querySelector(".js-reset-button").addEventListener('click', function () {
+    sideBar.innerHTML = "";
+    localStorage.clear();
+});
+
 /*******  Taking Input From the text input box  *******/
 function getUserInput() {
     var inputValue = document.querySelector('.js-search').value;
     return inputValue;
 }
 
+var sideBar = document.querySelector(".col-left");
+sideBar.innerHTML = localStorage.getItem("key");
