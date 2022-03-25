@@ -5,7 +5,7 @@ var SoundCloudAPI = {};
 
 SoundCloudAPI.init = function () {
     SC.initialize({
-        client_id: 'cd9be64eeb32d1741c17cb39e41d254d'
+        client_id: 'gm55QhEUd3ZaSUB6eVrf3vxNKtJu59Mn'
     });
 }
 
